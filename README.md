@@ -1,5 +1,5 @@
 # TrueLayer Senior Backend Engineer Challenge
-This is a simple REST API, which takes a Pokemon name as input and returns the translated Shakespearan Description.
+This is a simple REST API, which takes a Pokemon name as input and returns the translated Shakespearan Description. By deafult the Ruby Version is selected from the Pokemon Species Flavor text for translation.
 # API Reference
  - Poke API : https://pokeapi.co/api/v2
  - Shakespeare API: https://api.funtranslations.com/translate/
@@ -23,7 +23,7 @@ This is a simple REST API, which takes a Pokemon name as input and returns the t
  - Navigate to the Solution Folder "PokemonChallenge"
  - docker build . -t pokemon -f "Pokemon.API\Dockerfile"
  - Run the command "docker images" to see the "pokemon" Docker image
- - Run the command "docker run -p 5000:80 --name pokemonapi pokemon". Pokemonapi will be the container name. Local Port 5000 is mapped to container port 80
+ - Run the command "docker run --rm -p 5000:80 --name pokemonapi pokemon". Pokemonapi will be the container name. Local Port 5000 is mapped to container port 80
  - Navigate to http://localhost:5000/swagger
  - You can use Pokemon API from Swagger Interface
  - or Directly call the API: http://localhost:5000/pokemon/pikachu
@@ -35,12 +35,15 @@ This is a simple REST API, which takes a Pokemon name as input and returns the t
  - Open Test Explorer Window in Visual Studio and run the Tests
  - Also you can run the Web API Project using IIS Express within Visual Studio if using Windows.
  # Key Highlights
+ - For the translation part, I have registerd the Translation Service as an HttpClient
+ - I have created wrapper class on top the Poke API .Net Client. This is to inject the Poke API Client to the Pokemon Service.
  - I have registered a Custom Exception Middleware Filter to handle any Exception within the application
  - There is custom Exception Class (APIException). This is used to customize the Exception Messages in certain scenarios and let the consumer know why that exception might have occured. For e.g. a consumer might have mistakenly provided an in valid pokemon name so the Exception will let the consumer know about this.
 	Also there is a Rate Limit on the Shakespeare API. So it will let the consumer know to try after some time
  - Swagger has been setup to provide UI and documentation around the API
- - For the translation part, I have registerd the Translation Service as an HttpClient.
+
  # Areas of Improvement
+  - For this solution, the Language and Version Name are hard coded. This can be user driven and can also be setup in the configuration.
   - Implement caching against each Pokemon Name. Since the Translate API has a limit on number of calls, this will improve user experience.
   - We can avoid using the Poke API .Net client and directly call the API if we want to avoid adding additional Nuget depencies to the project.
 

@@ -21,6 +21,11 @@ namespace Pokemon.Services
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Get Shakespeare Description of any input text. There is an call limit on the Translate API.
+        /// </summary>
+        /// <param name="inputText"></param>
+        /// <returns>Task<string></string></returns>
         public async Task<string> GetShakespeareText(string inputText)
         {
             TranslationResponse transltResp=null;
@@ -36,6 +41,7 @@ namespace Pokemon.Services
             }
             else
             {
+                // 429 Status is thrown by the API when the call limit is reached.
                 if (response.StatusCode == (HttpStatusCode)429)
                     throw new APIException((HttpStatusCode)429, "No Shakespeare Translation Available as this time. Please try again later");
                 throw new Exception("Some Error Occured");

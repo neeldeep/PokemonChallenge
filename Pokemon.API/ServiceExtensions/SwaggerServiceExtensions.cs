@@ -7,16 +7,14 @@ using System.Reflection;
 
 namespace Pokemon.API.ServiceExtensions
 {
-    /// <summary>
-    /// 
-    /// </summary>
+
     public static class SwaggerServiceExtensions
     {
         /// <summary>
-        /// 
+        /// This enables the Swagger on the Pokemon API.
         /// </summary>
         /// <param name="services"></param>
-        /// <returns></returns>
+        /// <returns>IServiceCollection</returns>
         public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
         {
 
@@ -33,10 +31,10 @@ namespace Pokemon.API.ServiceExtensions
             return services;
         }
         /// <summary>
-        /// 
+        /// Setup Swagger Path
         /// </summary>
         /// <param name="app"></param>
-        /// <returns></returns>
+        /// <returns>IApplicationBuilder</returns>
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
             // Enable middleware to serve generated Swagger as a JSON endpoint.

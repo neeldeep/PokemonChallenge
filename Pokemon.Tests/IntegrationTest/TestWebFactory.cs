@@ -7,6 +7,9 @@ using Pokemon.API;
 
 namespace Pokemon.Tests.IntegrationTest
 {
+    /// <summary>
+    /// Integration Test Web Factory to setup the Configuration and WebHost
+    /// </summary>
     public abstract class TestWebFactory : WebApplicationFactory<Startup>
     {
         private readonly IConfiguration _configuration;

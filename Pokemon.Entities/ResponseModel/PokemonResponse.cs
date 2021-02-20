@@ -2,6 +2,9 @@
 
 namespace Pokemon.Entities
 {
+    /// <summary>
+    /// This is response object returned when calling the Pokeon API
+    /// </summary>
     public class PokemonResponse
     {
 

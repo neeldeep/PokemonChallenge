@@ -7,6 +7,10 @@ namespace Pokemon.API.ServiceExtensions
 {
     internal static class Dependencies
     {
+        /// <summary>
+        /// This class is created to declare the Dependences in a single place. Also separating out to keep the Startup.cs clean
+        /// </summary>
+        /// <param name="services"></param>
         public static void Add(IServiceCollection services)
         {
             services.TryAddSingleton<IPokeAPIClient, PokeAPIClientService>();

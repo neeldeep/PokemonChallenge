@@ -20,7 +20,7 @@
     "Pokemon.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "pokemon/pikachu",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

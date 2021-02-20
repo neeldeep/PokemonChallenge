@@ -29,7 +29,7 @@ namespace Pokemon.Tests.Services
             { Name = vaidPokemonName, 
                 FlavorTextEntries= new List<PokemonSpeciesFlavorTexts>() 
                 { new PokemonSpeciesFlavorTexts() { FlavorText="Sample Flavor Text",
-                                                    Language=new NamedApiResource<Language>(){ Name="en"} } } };
+                                                    Language=new NamedApiResource<Language>(){ Name="en"},Version=new NamedApiResource<Version>(){ Name="ruby"} } } };
             // Setup of Mock Objects 
             var mockTranslateSvc = new Mock<ITranslateService>();
             mockTranslateSvc.Setup(obj => obj.GetShakespeareText(It.IsAny<string>())).ReturnsAsync("some translated text");

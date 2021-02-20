@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Pokemon.Entities;
 using Pokemon.Services.Interfaces;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,7 +34,7 @@ namespace Pokemon.Services
             var species = await _pokeClient.GetPokemonByName(pokemonName.ToLower());
 
             var description = species?.FlavorTextEntries?.FirstOrDefault(
-                    c => c.Language.Name == "en");
+                    c => string.Equals(c.Language.Name,"en", StringComparison.OrdinalIgnoreCase) && string.Equals(c.Version.Name,"ruby", StringComparison.OrdinalIgnoreCase));
             if (description == null || description.FlavorText == null)
             {
                 _logger.LogError("No Description Available for Pokemon");
@@ -48,9 +49,6 @@ namespace Pokemon.Services
                     throw new APIException(System.Net.HttpStatusCode.NotFound, "Cannot Translate Text");
                 }
         }
-
-     
-
 
     }
 }

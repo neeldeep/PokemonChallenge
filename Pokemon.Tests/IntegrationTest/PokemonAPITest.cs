@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace Pokemon.Tests.IntegrationTest
 {
+    /// <summary>
+    /// This is an integration test to call the Pokemon Controller
+    /// </summary>
     [TestFixture]
     public  class PokemonAPITest :  TestWebFactory
     {

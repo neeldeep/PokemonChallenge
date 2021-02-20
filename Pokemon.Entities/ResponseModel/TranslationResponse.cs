@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Pokemon.Entities
 {
-   public class TranslationResponse
+    /// <summary>
+    ///  This object is used to map the response from Translate API
+    /// </summary>
+    public class TranslationResponse
     {
 
         [JsonPropertyName("contents")]

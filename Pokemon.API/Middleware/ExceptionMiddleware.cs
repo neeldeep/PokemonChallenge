@@ -12,6 +12,11 @@ namespace Pokemon.API.Middleware
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
 
+        /// <summary>
+        /// This is a Customer Middleware that handles Exception across the Application
+        /// </summary>
+        /// <param name="next"></param>
+        /// <param name="logger"></param>
         public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
         {
             _next = next;

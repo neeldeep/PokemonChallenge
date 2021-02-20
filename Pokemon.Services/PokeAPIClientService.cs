@@ -21,10 +21,10 @@ namespace Pokemon.Services
             }
         }
         /// <summary>
-        /// 
+        /// Get Pokemon By Name using Poki API .Net Client
         /// </summary>
         /// <param name="pokemonName"></param>
-        /// <returns></returns>
+        /// <returns>Task<PokemonSpecies></returns>
         public async Task<PokemonSpecies> GetPokemonByName(string pokemonName)
         {
             try
