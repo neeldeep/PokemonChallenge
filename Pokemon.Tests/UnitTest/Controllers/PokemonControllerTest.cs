@@ -10,7 +10,6 @@ namespace Pokemon.Tests.Controllers
    public class PokemonControllerTest
     {
         private Mock<ILogger<PokemonController>> logger;
-        private Mock<IPokemonService> pokeSvc;
 
         [SetUp]
         public void Setup()
